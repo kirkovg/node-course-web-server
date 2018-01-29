@@ -26,9 +26,9 @@ app.use((req, res, next) => {
 });
 
 // custom maintenance middleware
-app.use((req, res, next) => {
-  res.render('maintenance.hbs');
-});
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs');
+// });
 
 // setup static file serving
 app.use(express.static('public'));
@@ -57,6 +57,14 @@ app.get('/about', (req, res) => {
     pageTitle: 'About page',
     pageHeading: 'About heading',
     pageText: "About text"
+  });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects page',
+    pageHeading: 'Projects heading',
+    pageText: "Projects text"
   });
 });
 
