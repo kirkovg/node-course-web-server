@@ -2,6 +2,8 @@ const express = require('express');
 const fs = require('fs');
 const hbs = require('hbs');
 
+const port = process.env.PORT || 3000;
+
 // create express app
 const app = express();
 
@@ -66,6 +68,6 @@ app.get('/bad', (req, res) => {
 
 
 // startup server
-app.listen(8000, () => {
-  console.log("Web server started listening on port 8000");
+app.listen(port, () => {
+  console.log(`Web server started listening on port ${port}`);
 });
